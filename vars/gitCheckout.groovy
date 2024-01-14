@@ -9,5 +9,10 @@ def call(body)
 				//step([$class: 'WsCleanup'])
 				checkout scm
         		}
+     stage("Maven build")
+			{
+				sh 'mvn clean install'
+			}	
+     }    
     }
 }
